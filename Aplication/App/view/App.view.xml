@@ -1,0 +1,7 @@
+<View xmlns="sap.m"
+	controllerName="BurhanRehber.Aplication.App.controller.App"
+ 	height="100%">
+	<App id="rootControl">
+		
+	</App>
+</View>

@@ -1,0 +1,98 @@
+<mvc:View
+		height="100%"
+		xmlns:core="sap.ui.core"
+		xmlns:mvc="sap.ui.core.mvc"
+		xmlns="sap.m"
+		controllerName="BurhanRehber.Aplication.Rehber.controller.Rehber"
+		xmlns:semantic="sap.m.semantic"
+		displayBlock="true"
+		xmlns:l="sap.ui.layout"
+		xmlns:u="sap.ui.unified"
+		class="viewPadding">
+        
+	<SplitContainer>
+		<masterPages>
+			<semantic:MasterPage title="Rehberim">
+					<List
+						id="ShortProductList"
+						headerText="Kişiler"
+						items="{
+							path: '/personellist',
+							sorter: {
+								path: 'ad'
+							}
+						}">
+						<items>
+							<!-- <StandardListItem
+								
+								title="{ad} {soyad}"
+								description="{telno} {mail}"
+								icon="resources/img/{foto}"
+								iconDensityAware="true"
+								iconInset="false" /> -->
+
+									<CustomListItem type="Active" press="itemselect">
+										<HBox>
+										<Image src="resources/img/{foto}" width="100px" />
+									
+											<VBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom" >
+												<Link text="{ad} {soyad}" target="resources/img/{foto}" />
+												<Label/>
+												<Label text="Telefon:{telno} "/>
+												<Label/>
+												<Label text="Mail:{mail}" />
+											</VBox>
+										</HBox>
+									</CustomListItem>
+						</items>
+					</List>	
+					<semantic:addAction>
+						<semantic:AddAction press="addPerson"/>
+					</semantic:addAction>
+			</semantic:MasterPage>
+				
+		</masterPages>
+		<detailPages>
+			<semantic:DetailPage
+					title="Yeni Kişi">
+                    <Page
+				id="detail2"
+				title="KişiselBilgiler"
+				backgroundDesign= "Solid"
+				class="sapUiStdPage"
+				
+				navButtonPress=".onPressDetailBack">
+                <Label text="Ad" />
+				<Input value="{/personel/ad}" placeholder="Adınızı Giriniz"  class="sapUiSmallMarginBottom"/>
+				<Label text="Soyad" />
+				<Input value="{/personel/soyad}" placeholder="Soyadınızı Giriniz" class="sapUiSmallMarginBottom"/>
+				<Label text="E-Mail" />
+				<Input value="{/personel/mail}" placeholder="Mail Adresinizi Giriniz" class="sapUiSmallMarginBottom"/>
+				<Label text="TelNo" />
+				<Input value="{/personel/telno}" placeholder="Telefon Numaranızı Giriniz" class="sapUiSmallMarginBottom"/>
+				<Label text="Fotoğraf" />
+				<FlexBox/>
+				<u:FileUploader
+				id="fileUploader"
+				name="myFileUpload"
+				uploadUrl="upload/"
+				tooltip="Upload your file to the local server"
+				uploadComplete="handleUploadComplete"
+				value="{/personel/foto}"/>
+				<FlexBox/>
+                <Button press="add" icon="sap-icon://add" text="Ekle"  width="250px" type="Accept" id="add"/>
+				<Button type="Reject"
+						text="Sil"
+						press="onDelete"
+						id="deleteBtn"
+						visible="false"
+						ariaDescribedBy="acceptButtonDescription genericButtonDescription"/>
+			</Page>
+				
+			</semantic:DetailPage>
+
+		</detailPages>
+	
+	</SplitContainer>
+
+</mvc:View>

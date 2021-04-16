@@ -1,0 +1,44 @@
+{
+    "name": "BNetPMobile",
+    "version": "2.1.0",
+    "main": "Component-preload.js",
+    "scripts": {
+        "start": "node static_server.js"
+    },
+    "reposnpitory": {
+        "type": "git",
+        "url": "http://git.detaysoft.com/BNet/BNetSapUI5V2.1.git"
+    },
+    "keywords": [],
+    "author": "Detaysoft Web Consultant Team",
+    "license": "BNetSapUI5 License, Version 2.1",
+    "dependencies": {
+        "browser-sync": "^2.26.7",
+        "gulp": "^4.0.0",
+        "gulp-if": "^3.0.0",
+        "gulp-pretty-data": "^0.1.2",
+        "gulp-uglify": "^3.0.2",
+        "gulp-ui5-preload": "^1.3.1",
+        "serve": "^11.2.0",
+        "start": "^5.1.0",
+        "static_server": "^1.0.2"
+    },
+    "description": "",
+    "devDependencies": {
+        "@babel/core": "^7.8.6",
+        "@babel/preset-env": "^7.8.6",
+        "del": "^3.0.0",
+        "gulp": "^4.0.0",
+        "gulp-babel": "^8.0.0",
+        "gulp-concat": "^2.6.1",
+        "gulp-inject-version": "^1.0.1",
+        "gulp-json-editor": "^2.5.4",
+        "gulp-remove-html": "^1.3.0",
+        "gulp-rename": "^1.4.0",
+        "gulp-replace": "^1.0.0",
+        "gulp-uglify-es": "^1.0.4",
+        "gulp-uglifycss": "^1.1.0",
+        "run-sequence": "^2.2.1",
+        "webpack-dev-server": "^3.10.1"
+    }
+}
